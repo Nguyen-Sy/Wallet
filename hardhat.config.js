@@ -20,6 +20,11 @@ module.exports = {
             gasPrice: 8000000000000,
             gasLimit: 210000000000000000n,
         },
+        sepolia: {
+            url: `https://eth-sepolia.public.blastapi.io`,
+            chainId: 11155111,
+            accounts: real_accounts,
+        },
     },
 
     mocha: {},

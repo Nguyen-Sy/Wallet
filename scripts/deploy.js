@@ -10,7 +10,7 @@ const main = async () => {
     const factory = await deployContract("Factory");
     const tx = await factory.createMultiSigWallet(
         [
-            "0x376CAE3573156ecaBc0E5aCFF8028ad21830D582",
+            signer.address,
             "0xcE4B46a5AB415aEEbf89E0c666bcfeC9f07194E7",
             "0xb68896703efdAdC6aE601e3f9FcEA928a1e478df",
         ],
@@ -55,7 +55,7 @@ const main = async () => {
 
     const send = await signer.sendTransaction({
         to: wallet,
-        value: ethers.utils.parseEther("1"),
+        value: ethers.utils.parseEther("0.001"),
     });
     console.log(send.hash);
 };
