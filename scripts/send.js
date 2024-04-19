@@ -7,9 +7,9 @@ const TOPIC =
 
 const main = async () => {
     const [signer] = await ethers.getSigners();
-    
+
     const send = await signer.sendTransaction({
-        to: "0x1AcBFF2193F611c4FbfbA13165c527c083EB8381",
+        to: "<Address of created wallet>",
         value: ethers.utils.parseEther("0.001"),
     });
     console.log(send.hash);

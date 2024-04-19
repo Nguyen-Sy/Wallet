@@ -16,48 +16,7 @@ const main = async () => {
         ],
         2
     );
-
-    const { logs } = await ethers.provider.getTransactionReceipt(tx.hash);
-    let event;
-    logs.forEach(({ data, topics }) => {
-        if (topics.includes(TOPIC)) {
-            event = ethers.utils.defaultAbiCoder.decode(
-                [
-                    {
-                        indexed: false,
-                        internalType: "address",
-                        name: "wallet",
-                        type: "address",
-                    },
-                    {
-                        indexed: false,
-                        internalType: "address[]",
-                        name: "owners",
-                        type: "address[]",
-                    },
-                    {
-                        indexed: false,
-                        internalType: "uint256",
-                        name: "confirmRequired",
-                        type: "uint256",
-                    },
-                ],
-                data
-            );
-        }
-    });
-    const { wallet, owners, confirmRequired } = event;
-    console.log({
-        wallet,
-        owners,
-        confirmRequired: confirmRequired.toString(),
-    });
-
-    const send = await signer.sendTransaction({
-        to: wallet,
-        value: ethers.utils.parseEther("0.001"),
-    });
-    console.log(send.hash);
+    console.log(tx.hash);
 };
 
 main();
