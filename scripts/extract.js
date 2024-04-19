@@ -7,7 +7,7 @@ const TOPIC =
 const main = async () => {
     // Extract wallet address from event of transaction through txHash
     const { logs } = await ethers.provider.getTransactionReceipt(
-        "<Transaction hash when call function create wallet>"
+        "0xbd12302f255c9fca2fc64d46b5c58a7abb09a281a3e9b38c39fd934aa840ab1d"
     );
     let event;
     logs.forEach(({ data, topics }) => {

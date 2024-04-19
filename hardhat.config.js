@@ -7,7 +7,7 @@ let privateKey = process.env.PRIVATE_KEY;
 
 let real_accounts = [privateKey];
 let local_accounts = [
-    "0x5d4bdde795b4e5be1fe40b4362a6f297a613ea7ec0a20bb84ac8245b672a25ff",
+    "0xbbda976b79e0c61835ef8adbd5a7bd3774468213aefc366bdfedb93495afdd2e",
 ];
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
